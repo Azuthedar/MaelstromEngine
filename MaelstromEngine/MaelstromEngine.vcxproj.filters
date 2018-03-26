@@ -13,5 +13,27 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\GameEngine">
+      <UniqueIdentifier>{39fbf3ee-75fa-4f4f-ae2a-eae3accf4853}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Renderer">
+      <UniqueIdentifier>{1ac6732d-0ce4-4c1f-b312-289e8ed855f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameEngine">
+      <UniqueIdentifier>{dee58224-8dd7-4d42-9a6b-a67ee95a4f40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Renderer">
+      <UniqueIdentifier>{43e1eeab-6ef0-45c4-be56-bd68dba82503}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GameEngine.cpp">
+      <Filter>Source Files\GameEngine</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameEngine.h">
+      <Filter>Header Files\GameEngine</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -37,12 +37,7 @@ void Window::InitWindow()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 4);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-	this->CreateWindow();
-}
-
-void Window::CreateWindow()
-{
-	this->_window = glfwCreateWindow(this->width, this->height, "Maelstrom Engine", NULL, NULL);
+	this->_window = glfwCreateWindow(this->width, this->height, "Maelstrom", NULL, NULL);
 
 	if (this->_window == nullptr)
 	{
@@ -52,4 +47,10 @@ void Window::CreateWindow()
 	}
 	glfwMakeContextCurrent(this->_window);
 
+	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+	{
+		std::cout << "Failed to initialize GLAD" << std::endl;
+	}
+	//Set viewport equal to glfw window size
+	glViewport(0, 0, this->width, this->height);
 }

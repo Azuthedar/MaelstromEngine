@@ -1,7 +1,6 @@
 #pragma once
 
 #include <main.h>
-#include <GLFW/glfw3.h>
 #include <Renderer\Window.h>
 
 class Renderer
@@ -10,7 +9,9 @@ class Renderer
 		Renderer();
 		~Renderer();
 
-		void Init();
 	private:
+		void Init();
+
 		Window *_window;
+		int _width, _height;
 };

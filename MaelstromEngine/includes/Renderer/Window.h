@@ -1,7 +1,6 @@
 #pragma once
 
-#include <GLFW\glfw3.h>
-#include <iostream>
+#include <main.h>
 
 class Window
 {
@@ -13,11 +12,10 @@ class Window
 		Window	&operator=(const Window &rhs);
 
 		void	InitWindow();
+		void	framebuffer_size_callback(GLFWwindow *window, int width, int height);
 
 		int				width, height;
 
 	private:
-		void	CreateWindow();
-
 		GLFWwindow		*_window;
 };

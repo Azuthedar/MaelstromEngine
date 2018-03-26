@@ -72,6 +72,11 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>D:\Development\VCPROJ\MaelstromEngine\MaelstromEngine\MaelstromEngine\includes;$(IncludePath)</IncludePath>
     <LibraryPath>D:\Development\VCPROJ\MaelstromEngine\MaelstromEngine\MaelstromEngine\ext\lib;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>$(VC_ExecutablePath_x64);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH)</ExecutablePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>D:\Development\VCPROJ\MaelstromEngine\MaelstromEngine\MaelstromEngine\includes;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Development\VCPROJ\MaelstromEngine\MaelstromEngine\MaelstromEngine\ext\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -85,6 +90,7 @@
     <Link>
       <AdditionalLibraryDirectories>D:\Development\VCPROJ\MaelstromEngine\MaelstromEngine\MaelstromEngine\ext;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <TargetMachine>MachineX64</TargetMachine>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -94,6 +100,9 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>

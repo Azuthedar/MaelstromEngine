@@ -4,6 +4,7 @@ Window::Window()
 {
 	this->width = 800;
 	this->height = 600;
+	this->windowType = WINDOW_FULLSCREEN;
 	this->InitWindow();
 	return ;
 }
@@ -12,6 +13,15 @@ Window::Window(int width, int height)
 {
 	this->width = width;
 	this->height = height;
+	this->windowType = WINDOW_FULLSCREEN;
+	this->InitWindow();
+}
+
+Window::Window(int width, int height, EWindowType type)
+{
+	this->width = width;
+	this->height = height;
+	this->windowType = type;
 	this->InitWindow();
 }
 
@@ -29,15 +39,16 @@ Window &Window::operator=(const Window &rhs)
 
 	return (*this);
 }
-
 void Window::InitWindow()
 {
-	glfwInit();
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 4);
-	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+	try
+	{
+		this->_window = glfwCreateWindow(this->width, this->height, "Maelstrom", NULL, NULL);
+	}
+	catch (...)
+	{
 
-	this->_window = glfwCreateWindow(this->width, this->height, "Maelstrom", NULL, NULL);
+	}
 
 	if (this->_window == nullptr)
 	{
@@ -45,6 +56,7 @@ void Window::InitWindow()
 		glfwTerminate();
 		std::cout << "Failed to create window" << std::endl;
 	}
+
 	glfwMakeContextCurrent(this->_window);
 
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
@@ -54,3 +66,32 @@ void Window::InitWindow()
 	//Set viewport equal to glfw window size
 	glViewport(0, 0, this->width, this->height);
 }
+
+void Window::ChangeWindow(EWindowType type)
+{
+	glfwDestroyWindow(this->_window);
+
+	switch (type)
+	{
+		case WINDOW_FULLSCREEN:
+		{
+
+		}
+
+		case WINDOW_WINDOWED_FULLSCREEN:
+		{
+
+		}
+
+		case WINDOW_WINDOWED:
+		{
+
+		}
+	}
+}
+
+
+/*SETTERS*/
+
+/*GETTERS*/
+GLFWwindow *Window::getGLFWWindow() { return (this->_window); }

@@ -75,7 +75,7 @@
     <ExecutablePath>$(VC_ExecutablePath_x64);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH)</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>D:\Development\VCPROJ\MaelstromEngine\MaelstromEngine\MaelstromEngine\includes;$(IncludePath)</IncludePath>
+    <IncludePath>D:\Development\VCPROJ\MaelstromEngine\MaelstromEngine\MaelstromEngine\includes\;$(IncludePath)</IncludePath>
     <LibraryPath>D:\Development\VCPROJ\MaelstromEngine\MaelstromEngine\MaelstromEngine\ext\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -138,8 +138,10 @@
     <ClInclude Include="includes\GLFW\glfw3native.h" />
     <ClInclude Include="includes\Renderer\Renderer.h" />
     <ClInclude Include="includes\Renderer\Window.h" />
+    <ClInclude Include="Input.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\GameEngine\GameEngine.cpp" />
     <ClCompile Include="src\glad\glad.c" />

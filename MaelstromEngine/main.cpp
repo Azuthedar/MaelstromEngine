@@ -4,9 +4,16 @@
 
 int main()
 {
-	GameEngine engine;
-	Renderer render;
+	GameEngine *engine;
+	Renderer *render;
 
+	engine = new GameEngine();
+	render = new Renderer();
 
+	int i = 0;
+	while (!glfwWindowShouldClose(render->getWindow()->getGLFWWindow()))
+	{
+		render->pollEvents();
+	}
 	return (0);
 }

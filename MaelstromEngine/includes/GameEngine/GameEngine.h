@@ -1,6 +1,7 @@
 #pragma once
 
 #include <main.h>
+#include <GameEngine\Input.h>
 
 class GameEngine
 {
@@ -10,11 +11,14 @@ class GameEngine
 
 		void Update();
 
+		void setShouldQuit(bool shouldQuit);
+		
+		bool getShouldQuit();
+
 	private:
 		void CalculateDeltaTime();
-		void Input();
 
-		std::string _input;
+		Input input;
 		bool _shouldQuit;
 
 		float _currTime, _prevTime;

@@ -9,7 +9,12 @@ class Renderer
 		Renderer();
 		~Renderer();
 
+		void pollEvents();
+
+		Window *getWindow();
+
 	private:
+		void GLFWInit();
 		void Init();
 
 		Window *_window;

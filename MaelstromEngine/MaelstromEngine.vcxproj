@@ -134,16 +134,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="includes\GameEngine\GameEngine.h" />
+    <ClInclude Include="includes\GameEngine\Input.h" />
     <ClInclude Include="includes\GLFW\glfw3.h" />
     <ClInclude Include="includes\GLFW\glfw3native.h" />
     <ClInclude Include="includes\Renderer\Renderer.h" />
     <ClInclude Include="includes\Renderer\Window.h" />
-    <ClInclude Include="Input.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\GameEngine\GameEngine.cpp" />
+    <ClCompile Include="src\GameEngine\Input.cpp" />
     <ClCompile Include="src\glad\glad.c" />
     <ClCompile Include="src\Renderer\Renderer.cpp" />
     <ClCompile Include="src\Renderer\Window.cpp" />

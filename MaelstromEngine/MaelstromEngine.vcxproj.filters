@@ -42,7 +42,7 @@
     <ClInclude Include="includes\Renderer\Window.h">
       <Filter>Header Files\Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="Input.h">
+    <ClInclude Include="includes\GameEngine\Input.h">
       <Filter>Header Files\GameEngine</Filter>
     </ClInclude>
   </ItemGroup>
@@ -62,7 +62,7 @@
     <ClCompile Include="src\Renderer\Window.cpp">
       <Filter>Source Files\Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="Input.cpp">
+    <ClCompile Include="src\GameEngine\Input.cpp">
       <Filter>Source Files\GameEngine</Filter>
     </ClCompile>
   </ItemGroup>

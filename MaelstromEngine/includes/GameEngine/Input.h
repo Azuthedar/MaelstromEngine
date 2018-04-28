@@ -8,7 +8,7 @@ class Input
 		Input();
 		~Input();
 
-		void RetrieveInput(GLFWwindow *window);
+		static void ProcessInput(GLFWwindow *window);
 
 	private:
 };

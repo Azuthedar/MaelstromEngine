@@ -9,8 +9,6 @@ class Renderer
 		Renderer();
 		~Renderer();
 
-		void pollEvents();
-
 		Window *getWindow();
 
 	private:

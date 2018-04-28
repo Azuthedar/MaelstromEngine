@@ -3,8 +3,8 @@
 Renderer::Renderer()
 {
 	//Defaults
-	this->_width = 1920;
-	this->_height = 1080;
+	this->_width = 600;
+	this->_height = 800;
 
 	this->Init();
 	return;
@@ -17,11 +17,6 @@ Renderer::~Renderer()
 }
 
 /*PUBLIC*/
-void Renderer::pollEvents()
-{
-	glfwSwapBuffers(this->_window->getGLFWWindow());
-	glfwPollEvents();
-}
 
 /*SETTERS*/
 

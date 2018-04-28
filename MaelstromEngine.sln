@@ -5,6 +5,12 @@ VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MaelstromEngine", "MaelstromEngine\MaelstromEngine.vcxproj", "{BB14DF2E-E205-4387-8045-0AC51FA41937}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8478C04F-FFC1-4583-B5A4-FE001B43C88E}"
+	ProjectSection(SolutionItems) = preProject
+		MaelstromEngine\src\GameEngine\Input.cpp = MaelstromEngine\src\GameEngine\Input.cpp
+		MaelstromEngine\includes\GameEngine\Input.h = MaelstromEngine\includes\GameEngine\Input.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64

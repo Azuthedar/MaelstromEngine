@@ -1,19 +1,29 @@
 #include <main.h>
 #include <GameEngine\GameEngine.h>
 #include <Renderer\Renderer.h>
+#include <GameEngine\Input.h>
 
 int main()
 {
-	GameEngine *engine;
 	Renderer *render;
 
-	engine = new GameEngine();
 	render = new Renderer();
 
-	int i = 0;
+	GLFWwindow *window = render->getWindow()->getGLFWWindow();
+
 	while (!glfwWindowShouldClose(render->getWindow()->getGLFWWindow()))
 	{
-		render->pollEvents();
+		window = render->getWindow()->getGLFWWindow();
+
+		//TEMP
+		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+		glClear(GL_COLOR_BUFFER_BIT);
+
+		Input::ProcessInput(window);
+		GameEngine::Update();
+		GameEngine::pollEvents(window);
 	}
+
+	delete render;
 	return (0);
 }

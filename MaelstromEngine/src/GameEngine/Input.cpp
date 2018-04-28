@@ -1,4 +1,4 @@
-#include "Input.h"
+#include <GameEngine\Input.h>
 
 Input::Input()
 {
@@ -8,7 +8,10 @@ Input::~Input()
 {
 }
 
-void Input::RetrieveInput(GLFWwindow window)
+void Input::ProcessInput(GLFWwindow *window)
 {
-	GLFWwindow *window = &window;
+	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+	{
+		glfwSetWindowShouldClose(window, true);
+	}
 }

@@ -9,17 +9,18 @@ class GameEngine
 		GameEngine();
 		~GameEngine();
 
-		void Update();
+		static void Update();
+		static void pollEvents(GLFWwindow *window);
 
 		void setShouldQuit(bool shouldQuit);
 		
 		bool getShouldQuit();
 
 	private:
-		void CalculateDeltaTime();
+		static float CalculateDeltaTime();
 
 		Input input;
 		bool _shouldQuit;
 
-		float _currTime, _prevTime;
+		static float _currTime, _prevTime;
 };

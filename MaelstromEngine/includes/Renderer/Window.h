@@ -23,11 +23,11 @@ class Window
 		void	InitWindow();
 		void	ChangeWindow(EWindowType type);
 
-		GLFWwindow *getGLFWWindow();
+		static GLFWwindow *getGLFWWindow();
 
 		int				width, height;
 		EWindowType		windowType;
 
 	private:
-		GLFWwindow		*_window;
+		static GLFWwindow		*_window;
 };

@@ -1,7 +1,7 @@
 #include <main.h>
 #include <GameEngine\GameEngine.h>
 #include <Renderer\Renderer.h>
-#include <GameEngine\Input.h>
+#include <GameEngine\Input\Input.h>
 
 int main()
 {
@@ -9,17 +9,17 @@ int main()
 
 	render = new Renderer();
 
-	GLFWwindow *window = render->getWindow()->getGLFWWindow();
+	GLFWwindow *window = Window::getGLFWWindow();
 
-	while (!glfwWindowShouldClose(render->getWindow()->getGLFWWindow()))
+	while (!glfwWindowShouldClose(window))
 	{
-		window = render->getWindow()->getGLFWWindow();
+		window = Window::getGLFWWindow();
 
 		//TEMP
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
-		Input::ProcessInput(window);
+		Input::ProcessInput();
 		GameEngine::Update();
 		GameEngine::pollEvents(window);
 	}

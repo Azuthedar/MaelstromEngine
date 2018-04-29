@@ -1,5 +1,7 @@
 #include <Renderer/Window.h>
 
+GLFWwindow *Window::_window;
+
 Window::Window()
 {
 	this->width = 800;
@@ -41,16 +43,9 @@ Window &Window::operator=(const Window &rhs)
 }
 void Window::InitWindow()
 {
-	try
-	{
-		this->_window = glfwCreateWindow(this->width, this->height, "Maelstrom", NULL, NULL);
-	}
-	catch (...)
-	{
+	_window = glfwCreateWindow(this->width, this->height, "Maelstrom", NULL, NULL);
 
-	}
-
-	if (this->_window == nullptr)
+	if (_window == nullptr)
 	{
 		//TODO: Throw exception
 		glfwTerminate();
@@ -94,4 +89,4 @@ void Window::ChangeWindow(EWindowType type)
 /*SETTERS*/
 
 /*GETTERS*/
-GLFWwindow *Window::getGLFWWindow() { return (this->_window); }
+GLFWwindow *Window::getGLFWWindow() { return (_window); }

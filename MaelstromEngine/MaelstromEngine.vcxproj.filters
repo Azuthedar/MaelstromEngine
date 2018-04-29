@@ -42,7 +42,13 @@
     <ClInclude Include="includes\Renderer\Window.h">
       <Filter>Header Files\Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="includes\GameEngine\Input.h">
+    <ClInclude Include="includes\GameEngine\Input\Input.h">
+      <Filter>Header Files\GameEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\GameEngine\Input\Keyboard.h">
+      <Filter>Header Files\GameEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\GameEngine\Input\Mouse.h">
       <Filter>Header Files\GameEngine</Filter>
     </ClInclude>
   </ItemGroup>
@@ -62,7 +68,13 @@
     <ClCompile Include="src\Renderer\Window.cpp">
       <Filter>Source Files\Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameEngine\Input.cpp">
+    <ClCompile Include="src\GameEngine\Input\Input.cpp">
+      <Filter>Source Files\GameEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameEngine\Input\Keyboard.cpp">
+      <Filter>Source Files\GameEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameEngine\Input\Mouse.cpp">
       <Filter>Source Files\GameEngine</Filter>
     </ClCompile>
   </ItemGroup>

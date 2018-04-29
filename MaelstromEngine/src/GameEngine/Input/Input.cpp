@@ -11,11 +11,26 @@ Input::~Input()
 {
 }
 
-void Input::ProcessInput()
+bool Input::GetKeyPressed(int keyCode)
 {
-	GLFWwindow *window = Window::getGLFWWindow();
-	if (glfwGetKey(window , kb.KPZero) == GLFW_PRESS)
-	{
-		glfwSetWindowShouldClose(window, true);
-	}
+	//TODO:: Make sure input is only received once if the button has not been released yet
+	if (glfwGetKey(Window::getGLFWWindow(), keyCode) == GLFW_PRESS)
+		return (true);
+	return (false);
 }
+
+bool Input::GetKeyDown(int keyCode)
+{
+	if (glfwGetKey(Window::getGLFWWindow(), keyCode) == GLFW_PRESS)
+		return (true);
+	return (false);
+}
+
+bool Input::GetKeyReleased(int keyCode)
+{
+	//Gets called every frame if the key is not pressed
+	if (glfwGetKey(Window::getGLFWWindow(), keyCode) == GLFW_RELEASE)
+		return (true);
+	return (false);
+}
+

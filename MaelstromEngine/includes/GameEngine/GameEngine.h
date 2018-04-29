@@ -12,15 +12,8 @@ class GameEngine
 		static void Update();
 		static void pollEvents(GLFWwindow *window);
 
-		void setShouldQuit(bool shouldQuit);
-		
-		bool getShouldQuit();
-
 	private:
+
 		static float CalculateDeltaTime();
-
-		Input input;
-		bool _shouldQuit;
-
 		static float _currTime, _prevTime;
 };

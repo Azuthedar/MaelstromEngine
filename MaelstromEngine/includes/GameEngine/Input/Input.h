@@ -11,11 +11,12 @@ class Input
 		Input();
 		~Input();
 
-		static void ProcessInput();
+		static bool GetKeyDown(int keyCode);
+		static bool GetKeyPressed(int keyCode);
+		static bool GetKeyReleased(int keyCode);
 
 		static Mouse mouse;
-
 		static Keyboard kb;
+
 	private:
 };
-

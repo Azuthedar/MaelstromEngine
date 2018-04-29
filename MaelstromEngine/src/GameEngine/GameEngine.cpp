@@ -8,7 +8,6 @@ float GameEngine::_prevTime = 0;
 #pragma region CONSTRUCTORS DECONSTRUCTORS
 GameEngine::GameEngine()
 {
-	this->_shouldQuit = false;
 	return ;
 }
 
@@ -19,6 +18,14 @@ GameEngine::~GameEngine()
 #pragma endregion
 void GameEngine::Update()
 {
+	if (Input::GetKeyDown(Input::kb.Zero))
+		std::cout << "0 being held down" << std::endl;
+	if (Input::GetKeyPressed(Input::kb.One))
+		std::cout << "1 pressed" << std::endl;
+	if (Input::GetKeyPressed(Input::kb.Escape))
+		glfwSetWindowShouldClose(Window::getGLFWWindow(), true);
+	//if (Input::GetKeyReleased(Input::kb.Two))
+		//std::cout << "2 was released" << std::endl;
 	CalculateDeltaTime();
 
 	return;
@@ -30,7 +37,7 @@ float GameEngine::CalculateDeltaTime()
 	_prevTime = _currTime;
 	_currTime = static_cast<float>(clock());
 	deltaTime = (_currTime - _prevTime) / CLOCKS_PER_SEC;
-	std::cout << deltaTime << std::endl;
+	//std::cout << deltaTime << std::endl;
 
 	return (deltaTime);
 }
@@ -54,10 +61,7 @@ void GameEngine::pollEvents(GLFWwindow *window)
 
 #pragma region SETTERS
 
-void GameEngine::setShouldQuit(bool shouldQuit) { this->_shouldQuit = shouldQuit; }
-
 #pragma endregion
 
 #pragma region GETTERS
-bool GameEngine::getShouldQuit() { return (_shouldQuit); }
 #pragma endregion

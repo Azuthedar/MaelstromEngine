@@ -16,9 +16,8 @@ Input::~Input()
 
 bool Input::GetKeyPressed(unsigned int keyCode)
 {
-	if (keyCode >= MAX_KEYS)
-		return (false);
-	return (m_keys[keyCode]);
+	/* NOT IMPLEMENTED */
+	return (false);
 }
 
 bool Input::GetKeyDown(unsigned int keyCode)

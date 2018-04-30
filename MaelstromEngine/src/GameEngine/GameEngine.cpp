@@ -28,11 +28,7 @@ void GameEngine::Update()
 	{
 		std::cout << "A is being held down" << std::endl;
 	}
-	if (Input::GetKeyPressed(Input::kb.B))
-	{
-		std::cout << "B has been pressed" << std::endl;
-	}
-	if (Input::GetKeyPressed(Input::kb.Escape))
+	if (Input::GetKeyDown(Input::kb.Escape))
 	{
 		glfwSetWindowShouldClose(Window::getGLFWWindow(), true);
 	}

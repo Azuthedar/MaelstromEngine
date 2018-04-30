@@ -3,8 +3,12 @@
 Mouse Input::mouse;
 Keyboard Input::kb;
 
+bool Input::m_keys[MAX_KEYS];
+bool Input::m_MButtons[MAX_MBUTTONS];
+
 Input::Input()
 {
+	glfwSetKeyCallback(Window::getGLFWWindow(), KeyCallback);
 }
 
 Input::~Input()
@@ -13,24 +17,29 @@ Input::~Input()
 
 bool Input::GetKeyPressed(int keyCode)
 {
-	//TODO:: Make sure input is only received once if the button has not been released yet
-	if (glfwGetKey(Window::getGLFWWindow(), keyCode) == GLFW_PRESS)
-		return (true);
-	return (false);
+	if (keyCode >= MAX_KEYS)
+		return (false);
+	return (m_keys[keyCode]);
 }
 
 bool Input::GetKeyDown(int keyCode)
 {
-	if (glfwGetKey(Window::getGLFWWindow(), keyCode) == GLFW_PRESS)
-		return (true);
-	return (false);
+	if (keyCode >= MAX_KEYS)
+		return (false);
+	return (m_keys[keyCode]);
 }
 
 bool Input::GetKeyReleased(int keyCode)
 {
-	//Gets called every frame if the key is not pressed
-	if (glfwGetKey(Window::getGLFWWindow(), keyCode) == GLFW_RELEASE)
+	if (keyCode >= MAX_KEYS)
+		return (false);
+	if (!m_keys[keyCode])
 		return (true);
 	return (false);
+}
+
+void Input::KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mods)
+{
+	m_keys[key] = (action != GLFW_RELEASE);
 }
 

@@ -18,14 +18,18 @@ GameEngine::~GameEngine()
 #pragma endregion
 void GameEngine::Update()
 {
-	if (Input::GetKeyDown(Input::kb.Zero))
-		std::cout << "0 being held down" << std::endl;
-	if (Input::GetKeyPressed(Input::kb.One))
-		std::cout << "1 pressed" << std::endl;
+	if (Input::GetKeyDown(Input::kb.A))
+	{
+		std::cout << "A is being held down" << std::endl;
+	}
+	if (Input::GetKeyPressed(Input::kb.B))
+	{
+		std::cout << "B has been pressed" << std::endl;
+	}
 	if (Input::GetKeyPressed(Input::kb.Escape))
+	{
 		glfwSetWindowShouldClose(Window::getGLFWWindow(), true);
-	//if (Input::GetKeyReleased(Input::kb.Two))
-		//std::cout << "2 was released" << std::endl;
+	}
 	CalculateDeltaTime();
 
 	return;

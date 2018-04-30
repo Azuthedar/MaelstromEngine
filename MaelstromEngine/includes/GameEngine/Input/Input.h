@@ -5,6 +5,9 @@
 #include <GameEngine\Input\Keyboard.h>
 #include <GameEngine\Input\Mouse.h>
 
+#define MAX_KEYS 1024
+#define MAX_MBUTTONS 32
+
 class Input
 {
 	public:
@@ -19,4 +22,8 @@ class Input
 		static Keyboard kb;
 
 	private:
+		static void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
+
+		static bool m_keys[MAX_KEYS];
+		static bool m_MButtons[MAX_MBUTTONS];
 };

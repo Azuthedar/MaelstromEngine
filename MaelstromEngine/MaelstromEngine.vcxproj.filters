@@ -51,6 +51,9 @@
     <ClInclude Include="includes\GameEngine\Input\Mouse.h">
       <Filter>Header Files\GameEngine</Filter>
     </ClInclude>
+    <ClInclude Include="includes\main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\GameEngine\GameEngine.cpp">

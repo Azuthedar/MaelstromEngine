@@ -13,14 +13,13 @@ int main()
 
 	while (!glfwWindowShouldClose(window))
 	{
-		window = Window::getGLFWWindow();
+		GameEngine::pollEvents(window);
 
 		//TEMP
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		GameEngine::Update();
-		GameEngine::pollEvents(window);
 	}
 
 	delete render;

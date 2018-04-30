@@ -139,6 +139,7 @@
     <ClInclude Include="includes\GameEngine\Input\Mouse.h" />
     <ClInclude Include="includes\GLFW\glfw3.h" />
     <ClInclude Include="includes\GLFW\glfw3native.h" />
+    <ClInclude Include="includes\main.h" />
     <ClInclude Include="includes\Renderer\Renderer.h" />
     <ClInclude Include="includes\Renderer\Window.h" />
   </ItemGroup>

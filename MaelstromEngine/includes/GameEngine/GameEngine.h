@@ -9,11 +9,13 @@ class GameEngine
 		GameEngine();
 		~GameEngine();
 
-		static void Update();
-		static void pollEvents(GLFWwindow *window);
+		void Init();
+		void Update();
+		void pollEvents(GLFWwindow *window);
 
 	private:
+		static void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
 
-		static float CalculateDeltaTime();
-		static float _currTime, _prevTime;
+		float CalculateDeltaTime();
+		float _currTime, _prevTime;
 };

@@ -1,13 +1,13 @@
 #include "../../includes/GameEngine/GameEngine.h"
 
-float GameEngine::_currTime = 0;
-float GameEngine::_prevTime = 0;
-
 #pragma region PUBLIC
 
 #pragma region CONSTRUCTORS DECONSTRUCTORS
 GameEngine::GameEngine()
 {
+	this->_currTime = 0;
+	this->_prevTime = 0;
+	
 	return ;
 }
 
@@ -16,6 +16,12 @@ GameEngine::~GameEngine()
 	return ;
 }
 #pragma endregion
+
+void GameEngine::Init()
+{
+	glfwSetKeyCallback(Window::getGLFWWindow(), KeyCallback);
+}
+
 void GameEngine::Update()
 {
 	if (Input::GetKeyDown(Input::kb.A))
@@ -57,6 +63,10 @@ void GameEngine::pollEvents(GLFWwindow *window)
 #pragma endregion
 
 #pragma region PRIVATE
+void GameEngine::KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mods)
+{
+	Input::m_keys[key] = (action != GLFW_RELEASE);
+}
 
 #pragma region STATICS
 

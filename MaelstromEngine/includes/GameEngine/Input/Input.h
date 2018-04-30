@@ -14,16 +14,15 @@ class Input
 		Input();
 		~Input();
 
-		static bool GetKeyDown(int keyCode);
-		static bool GetKeyPressed(int keyCode);
-		static bool GetKeyReleased(int keyCode);
+		static bool GetKeyDown(unsigned int keyCode);
+		static bool GetKeyPressed(unsigned int keyCode);
+		static bool GetKeyReleased(unsigned int keyCode);
 
 		static Mouse mouse;
 		static Keyboard kb;
 
-	private:
-		static void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
-
 		static bool m_keys[MAX_KEYS];
 		static bool m_MButtons[MAX_MBUTTONS];
+
+	private:
 };

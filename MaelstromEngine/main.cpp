@@ -5,21 +5,22 @@
 
 int main()
 {
+	static GameEngine *engine = new GameEngine();
 	Renderer *render;
 
 	render = new Renderer();
 
 	GLFWwindow *window = Window::getGLFWWindow();
-
+	engine->Init();
 	while (!glfwWindowShouldClose(window))
 	{
-		GameEngine::pollEvents(window);
+		engine->pollEvents(window);
 
 		//TEMP
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
-		GameEngine::Update();
+		engine->Update();
 	}
 
 	delete render;
